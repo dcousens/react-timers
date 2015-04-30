@@ -1,0 +1,21 @@
+{
+  "name": "react-interval",
+  "version": "1.0.0",
+  "description": "A react setInterval mixin for mere mortals.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "interval",
+    "setInterval",
+    "setTimeout",
+    "mixin",
+    "sane",
+    "componentDidMount",
+    "clearInterval"
+  ],
+  "author": "Daniel Cousens",
+  "license": "MIT"
+}
