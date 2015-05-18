@@ -1,17 +1,24 @@
 module.exports = function Interval() {
   var intervals = []
+  var timeouts = []
 
   return {
     clearIntervals: function() {
       intervals.map(clearInterval)
     },
 
+    clearTimeouts: function() {
+      timeouts.map(clearTimeout)
+    },
+
     componentWillMount: function() {
       intervals = []
+      timeouts = []
     },
 
     componentWillUnmount: function() {
       this.clearIntervals()
+      this.clearTimeouts()
     },
 
     setInterval: function(callback, interval) {
@@ -37,6 +44,16 @@ module.exports = function Interval() {
           active = false
         })
       }, interval))
+    },
+
+    setTimeout: function(callback, timeout) {
+      var self = this
+
+      timeouts.push(setTimeout(function() {
+        if (!self.isMounted()) return
+
+        callback()
+      }, timeout))
     }
   }
 }
