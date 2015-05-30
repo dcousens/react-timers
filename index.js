@@ -27,7 +27,7 @@ module.exports = function Timers() {
       intervals.push(setInterval(function() {
         if (!self.isMounted()) return
 
-        callback()
+        callback.call(self)
       }, interval))
     },
 
@@ -40,7 +40,7 @@ module.exports = function Timers() {
         if (!self.isMounted()) return
 
         active = true
-        callback(function() {
+        callback.call(self, function() {
           active = false
         })
       }, interval))
@@ -52,7 +52,7 @@ module.exports = function Timers() {
       timeouts.push(setTimeout(function() {
         if (!self.isMounted()) return
 
-        callback()
+        callback.call(self)
       }, timeout))
     }
   }
