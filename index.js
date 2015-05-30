@@ -31,7 +31,7 @@ module.exports = function Interval() {
       }, interval))
     },
 
-    setIntervalAsync: function(callback, interval) {
+    setIntervalWait: function(callback, interval) {
       var active = false
       var self = this
 
