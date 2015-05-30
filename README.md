@@ -1,6 +1,6 @@
-# react-interval
+# react-timers
 
-[![Version](http://img.shields.io/npm/v/react-interval.svg)](https://www.npmjs.org/package/react-interval)
+[![Version](http://img.shields.io/npm/v/react-timers.svg)](https://www.npmjs.org/package/react-timers)
 
 A [react](https://github.com/facebook/react) setInterval mixin for mere mortals.
 Any intervals that are set are automatically cleared based on the component life cycle.
@@ -11,7 +11,7 @@ Any intervals that are set are automatically cleared based on the component life
 ## Example
 
 ``` javascript
-var Interval = require("react-interval")
+var Interval = require("react-timers")
 
 module.exports = React.createClass({
 	mixins: [Interval()],

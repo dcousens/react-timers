@@ -1,4 +1,4 @@
-module.exports = function Interval() {
+module.exports = function Timers() {
   var intervals = []
   var timeouts = []
 
