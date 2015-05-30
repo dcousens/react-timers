@@ -19,6 +19,10 @@ module.exports = React.createClass({
 	componentDidMount: function () {
 		var self = this
 
+		this.setTimeout(function () {
+			self.setState({ lastUpdated: new Date() })
+		}, 1000)
+
 		this.setInterval(function () {
 			self.setState({ lastUpdated: new Date() })
 		}, 1000)
