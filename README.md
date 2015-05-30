@@ -1,3 +1,5 @@
+# DEPRECATED. Use react-timers instead
+
 # react-interval
 
 [![Version](http://img.shields.io/npm/v/react-interval.svg)](https://www.npmjs.org/package/react-interval)
