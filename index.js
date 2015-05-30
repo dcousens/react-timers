@@ -4,11 +4,11 @@ module.exports = function Timers() {
 
   return {
     clearIntervals: function() {
-      intervals.map(clearInterval)
+      intervals.forEach(clearInterval)
     },
 
     clearTimeouts: function() {
-      timeouts.map(clearTimeout)
+      timeouts.forEach(clearTimeout)
     },
 
     componentWillMount: function() {
