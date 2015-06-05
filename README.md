@@ -2,7 +2,7 @@
 
 [![Version](http://img.shields.io/npm/v/react-timers.svg)](https://www.npmjs.org/package/react-timers)
 
-A [react](https://github.com/facebook/react) setInterval mixin for mere mortals.
+A [react](https://github.com/facebook/react) `setInterval`/`setTimeout` mixin for mere mortals.
 Any intervals that are set are automatically cleared based on the component life cycle.
 
 **WARNING:** If you are performing an async action, you should still check if the component is mounted.
