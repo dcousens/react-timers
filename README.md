@@ -26,17 +26,6 @@ module.exports = React.createClass({
 		this.setInterval(function () {
 			self.setState({ lastUpdated: new Date() })
 		}, 1000)
-
-		this.setIntervalWait(function (callback) {
-			request.get("myapi.com/data", function(err, res) {
-				// component may have unmounted before request finished
-				if (!self.isMounted) return callback()
-
-				self.setState({ data: res.body })
-
-				callback()
-			})
-		}, 4000)
 	},
 
 	render: function () {
