@@ -21,6 +21,20 @@ module.exports = function Timers () {
       this.clearTimeouts()
     },
 
+    countDown: function (callback, timeout, interval) {
+      var self = this
+      var sleep = Math.min(timeout, interval)
+
+      this.setTimeout(function () {
+        var remaining = timeout - sleep
+
+        callback(remaining)
+        if (remaining <= 0) return
+
+        self.countDown(callback, remaining, interval)
+      }, sleep)
+    },
+
     setInterval: function (callback, interval) {
       var self = this
 
