@@ -1,6 +1,6 @@
 {
   "name": "react-timers",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "A react setInterval mixin for mere mortals.",
   "main": "index.js",
   "scripts": {
