@@ -1,6 +1,6 @@
 {
   "name": "react-timers",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "A react setInterval mixin for mere mortals.",
   "main": "index.js",
   "scripts": {
@@ -15,14 +15,18 @@
   },
   "homepage": "https://github.com/dcousens/react-timers",
   "keywords": [
-    "react",
-    "interval",
-    "setInterval",
-    "setTimeout",
-    "mixin",
-    "sane",
+    "clearInterval",
     "componentDidMount",
-    "clearInterval"
+    "countdown",
+    "interval",
+    "mixin",
+    "react",
+    "time",
+    "timeout",
+    "timers",
+    "sane",
+    "setInterval",
+    "setTimeout"
   ],
   "author": "Daniel Cousens",
   "license": "MIT"
