@@ -11,6 +11,11 @@ module.exports = function Timers () {
       timeouts.forEach(clearTimeout)
     },
 
+    clearTimers: function () {
+      this.clearInterval()
+      this.clearTimeouts()
+    },
+
     componentWillMount: function () {
       intervals = []
       timeouts = []
