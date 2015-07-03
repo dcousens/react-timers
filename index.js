@@ -1,30 +1,22 @@
+function clearTimers () {
+  this.clearInterval()
+  this.clearTimeouts()
+}
+
 module.exports = function Timers () {
   var intervals = []
   var timeouts = []
 
   return {
-    clearIntervals: function () {
-      intervals.forEach(clearInterval)
-    },
-
-    clearTimeouts: function () {
-      timeouts.forEach(clearTimeout)
-    },
-
-    clearTimers: function () {
-      this.clearInterval()
-      this.clearTimeouts()
-    },
+    clearIntervals: function () { intervals.forEach(clearInterval) },
+    clearTimeouts: function () { timeouts.forEach(clearTimeout) },
+    clearTimers: clearTimers,
 
     componentWillMount: function () {
       intervals = []
       timeouts = []
     },
-
-    componentWillUnmount: function () {
-      this.clearIntervals()
-      this.clearTimeouts()
-    },
+    componentWillUnmount: clearTimers,
 
     countDown: function (callback, timeout, interval) {
       var self = this
