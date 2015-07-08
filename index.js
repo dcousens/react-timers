@@ -36,8 +36,6 @@ module.exports = function Timers () {
       var self = this
 
       intervals.push(setInterval(function () {
-        if (!self.isMounted()) return
-
         callback.call(self)
       }, interval))
     },
@@ -46,8 +44,6 @@ module.exports = function Timers () {
       var self = this
 
       timeouts.push(setTimeout(function () {
-        if (!self.isMounted()) return
-
         callback.call(self)
       }, timeout))
     }
