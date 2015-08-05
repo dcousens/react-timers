@@ -1,17 +1,20 @@
 function clearTimers () {
+  this.clearImmediate()
   this.clearInterval()
   this.clearTimeouts()
 }
 
 module.exports = function Timers () {
-  let intervals, timeouts
+  let immediates, intervals, timeouts
 
   return {
+    clearImmediate () { immediates.forEach(clearImmediate) },
     clearIntervals () { intervals.forEach(clearInterval) },
     clearTimeouts () { timeouts.forEach(clearTimeout) },
     clearTimers: clearTimers,
 
     componentWillMount () {
+      immediates = []
       intervals = []
       timeouts = []
     },
@@ -30,6 +33,7 @@ module.exports = function Timers () {
       }, sleep)
     },
 
+    setImmediate (callback, ... args) { immediates.push(setImmediate((... params) => { callback.call(this, ... params) }, ... args)) },
     setInterval (callback, ... args) { intervals.push(setInterval((... params) => { callback.call(this, ... params) }, ... args)) },
     setTimeout (callback, ... args) { timeouts.push(setTimeout((... params) => { callback.call(this, ... params) }, ... args)) }
   }
