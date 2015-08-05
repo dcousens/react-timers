@@ -8,7 +8,7 @@ module.exports = function Timers () {
   let immediates, intervals, timeouts
 
   return {
-    clearImmediate () { immediates.forEach(clearImmediate) },
+    clearImmediates () { immediates.forEach(clearImmediate) },
     clearIntervals () { intervals.forEach(clearInterval) },
     clearTimeouts () { timeouts.forEach(clearTimeout) },
     clearTimers: clearTimers,
