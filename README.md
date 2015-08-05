@@ -26,15 +26,6 @@ module.exports = React.createClass({
 		this.setInterval(function () {
 			self.setState({ lastUpdated: new Date() })
 		}, 1000)
-
-		this.countDown(function (remaining) {
-			// remaining as 3000... 2000... 1000... 0
-			if (remaining === 0) {
-				self.setState({ text: 'Go!' })
-			} else {
-				self.setState({ text: Math.ceil(remaining / 1000) })
-			}
-		}, 3000, 1000)
 	},
 
 	render: function () {

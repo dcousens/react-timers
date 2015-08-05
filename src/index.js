@@ -23,19 +23,6 @@ module.exports = function Timers () {
     },
     componentWillUnmount: clearTimers,
 
-    countDown (callback, timeout, interval) {
-      const sleep = Math.min(timeout, interval)
-
-      this.setTimeout(() => {
-        const remaining = timeout - sleep
-
-        callback(remaining)
-        if (remaining <= 0) return
-
-        this.countDown(callback, remaining, interval)
-      }, sleep)
-    },
-
     setImmediate (callback, ... args) {
       return immediates[immediates.push(setImmediate((... params) => { callback.call(this, ... params) }, ... args)) - 1]
     },
