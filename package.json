@@ -1,10 +1,31 @@
 {
   "name": "react-timers",
   "version": "3.2.0",
-  "description": "A react setInterval mixin for mere mortals.",
-  "main": "index.js",
+  "description": "A react setInterval/setTimeout/setImmediate mixin for mere mortals.",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel --out-dir lib/ src/",
+    "build-examples": "find examples/src -name '*.js' -exec sh -c 'browserify -t babelify {} --outfile examples/`basename {}`' \\;",
+    "prepublish": "npm run build",
+    "standard": "standard",
+    "start": "npm run watch-examples",
+    "test": "npm run standard",
+    "watch": "babel --watch --out-dir lib/ src/",
+    "watch-examples": "find examples/src -name '*.js' -exec sh -c 'watchify -v -t babelify {} --outfile examples/`basename {}`' \\;"
+  },
+  "standard": {
+    "ignore": [
+      "lib/"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "*",
+    "babelify": "*",
+    "browserify": "*",
+    "react": "^0.13.3",
+    "standard": "*",
+    "watchify": "*"
   },
   "repository": {
     "type": "git",
