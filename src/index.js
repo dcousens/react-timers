@@ -11,7 +11,10 @@ module.exports = function Timers () {
     clearImmediates () { immediates.forEach(clearImmediate) },
     clearIntervals () { intervals.forEach(clearInterval) },
     clearTimeouts () { timeouts.forEach(clearTimeout) },
-    clearTimers: clearTimers,
+    clearImmediate (... args) { return clearImmediate(... args) },
+    clearInterval (... args) { return clearInterval(... args) },
+    clearTimeout (... args) { return clearTimeout(... args) },
+    clearTimers,
 
     componentWillMount () {
       immediates = []
@@ -33,8 +36,14 @@ module.exports = function Timers () {
       }, sleep)
     },
 
-    setImmediate (callback, ... args) { immediates.push(setImmediate((... params) => { callback.call(this, ... params) }, ... args)) },
-    setInterval (callback, ... args) { intervals.push(setInterval((... params) => { callback.call(this, ... params) }, ... args)) },
-    setTimeout (callback, ... args) { timeouts.push(setTimeout((... params) => { callback.call(this, ... params) }, ... args)) }
+    setImmediate (callback, ... args) {
+      return immediates[immediates.push(setImmediate((... params) => { callback.call(this, ... params) }, ... args)) - 1]
+    },
+    setInterval (callback, ... args) {
+      return intervals[intervals.push(setInterval((... params) => { callback.call(this, ... params) }, ... args)) - 1]
+    },
+    setTimeout (callback, ... args) {
+      return timeouts[timeouts.push(setTimeout((... params) => { callback.call(this, ... params) }, ... args)) - 1]
+    }
   }
 }
