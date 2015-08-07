@@ -1,6 +1,6 @@
 {
   "name": "react-timers",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": "A react setInterval/setTimeout/setImmediate mixin for mere mortals.",
   "main": "lib/index.js",
   "scripts": {
