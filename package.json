@@ -13,6 +13,9 @@
     "watch": "babel --watch --out-dir lib/ src/",
     "watch-examples": "find examples/src -name '*.js' -exec sh -c 'watchify -v -t babelify {} --outfile examples/`basename {}`' \\;"
   },
+  "files": [
+    "lib/"
+  ],
   "standard": {
     "ignore": [
       "lib/"
