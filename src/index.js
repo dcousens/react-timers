@@ -1,6 +1,6 @@
 function clearTimers () {
-  this.clearImmediate()
-  this.clearInterval()
+  this.clearImmediates()
+  this.clearIntervals()
   this.clearTimeouts()
 }
 
