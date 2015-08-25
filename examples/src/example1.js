@@ -2,7 +2,7 @@ let React = require('react')
 let Timers = require('../../src/')
 
 let App = React.createClass({
-  mixins: [Timers()],
+  mixins: [Timers],
 
   getInitialState () {
     return {

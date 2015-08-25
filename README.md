@@ -14,7 +14,7 @@ Any intervals that are set are automatically cleared based on the component life
 var Timers = require("react-timers")
 
 module.exports = React.createClass({
-	mixins: [Timers()],
+	mixins: [Timers],
 
 	componentDidMount: function () {
 		var self = this
