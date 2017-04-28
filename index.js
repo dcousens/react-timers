@@ -20,12 +20,12 @@ module.exports = {
 
   setInterval: function setInterval (callback) {
     var id = GLOBAL.setInterval(callback.bind(this), [].slice.call(arguments, 1))
-
-    return this.__rt_intervals[this.__rt_intervals.push(id) - 1]
+    this.__rt_intervals.push(id)
+    return id
   },
   setTimeout: function setTimeout (callback) {
     var id = GLOBAL.setTimeout(callback.bind(this), [].slice.call(arguments, 1))
-
-    return this.__rt_timeouts[this.__rt_timeouts.push(id) - 1]
+    this.__rt_timeouts.push(id)
+    return id
   }
 }
