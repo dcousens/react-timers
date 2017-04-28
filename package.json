@@ -3,6 +3,9 @@
   "version": "5.0.2",
   "description": "A react setInterval/setTimeout mixin for mere mortals.",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "standard": "standard",
     "test": "npm run standard"
