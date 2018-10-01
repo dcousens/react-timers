@@ -35,4 +35,4 @@ module.exports = React.createClass({
 ```
 
 
-## LICENSE [MIT][LICENSE]
+## LICENSE [MIT](LICENSE)
