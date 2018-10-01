@@ -1,4 +1,5 @@
-# react-timers
+# DEPRECATED: use [react-timer-mixin](https://github.com/reactjs/react-timer-mixin) instead
+### react-timers
 
 [![Version](http://img.shields.io/npm/v/react-timers.svg)](https://www.npmjs.org/package/react-timers)
 
